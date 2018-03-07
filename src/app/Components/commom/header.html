@@ -1,0 +1,20 @@
+<div class="header">
+    <div class="logo">
+        <i class="fas fa-lock"></i>
+        <span>GSW ATM</span>
+    </div>
+    <div class="user-info">
+        <div class="user-photo">
+            <span>{{user.initial}}</span>
+        </div>
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                 {{user.name}}
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" ng-click="logout()"> <i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </div>
+    </div>
+</div>

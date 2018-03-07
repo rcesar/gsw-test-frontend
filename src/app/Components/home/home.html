@@ -1,0 +1,104 @@
+<div class="home">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Seu saldo atual</h5>
+                    <h3 class="card-subtitle mb-2 text-center">{{user.balance | currency:'R$'}}</h6>
+                    <div class="card-text">
+                        <div class="row m-t-20">
+                            <!-- <div class="col-md-6">
+                                <button ng-click="openDeposit()" class="btn btn-success btn-block"><i class="fas fa-plus-circle"></i> Realizar Deposito</button>
+                            </div> -->
+                            <div class="col-md-12">
+                                <button ng-click="openWithdraw()" class="btn btn-danger btn-block"><i class="fas fa-minus-circle"></i> Realizar Saque</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Notas disponiveis</h5>
+                    <div class="row text-center">
+                        <div class="col-md-6">
+                            <h4>R$100,00</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>R$50,00</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>R$20,00</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>R$10,00</h4>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-t-20">
+        <div class="col-md-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Ultimas transações</h5>
+                    <div class="row">
+                        <table class="table table-stripped">
+                            <thead>
+                                <th>Data</th>
+                                <th>Saldo Anterior</th>
+                                <th>Valor Saque</th>
+                                <th>Saldo Atualizado</th>
+                            </thead>
+
+                            <tbody>
+                                <tr ng-repeat="transaction in withdraws">
+                                    <td>{{transaction.createAt | date:'dd/MM/yyyy - HH:mm:ss'}}</td>
+                                    <td>{{transaction.oldBalance | currency:'R$'}}</td>
+                                    <td>{{transaction.value | currency:'R$'}}</td>
+                                    <td>{{(transaction.oldBalance - transaction.value) | currency:'R$'}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="withdraw.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Digite o valor que deseja sacar</h3>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="value">Valor:</label>
+            <input type="number" ng-model="value" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <button ng-click="ok()" class="btn btn-danger btn-block">Realizar Saque</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="deposit.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Digite o valor que deseja depositar</h3>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="value">Valor:</label>
+            <input type="number" ng-model="value" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <button ng-click="ok()" class="btn btn-success btn-block">Realizar deposito</button>
+        </div>
+    </div>
+</script>

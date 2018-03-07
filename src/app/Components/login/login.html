@@ -1,0 +1,19 @@
+<div class="login">
+    <div class="login-box">
+        <h3>Entrar</h3>
+        <p>Digite seus dados para entrar ou crie sua nova conta</p>
+        <form novalidate>
+            <div class="form-group">
+                <label for="user">Usuário</label>
+                <input type="text" class="form-control" ng-model="login.user">
+
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" ng-model="login.password">
+            </div>
+            <div class="form-group">
+                <button ng-click="send()" class="btn btn-block gsw-btn-primary">Entrar</button>
+                <a ui-sref="single.sign" class="btn btn-block gsw-btn-secundary">Nova Conta</a>
+            </div>
+        </form>
+    </div>
+</div>
