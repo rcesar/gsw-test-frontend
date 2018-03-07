@@ -1,3 +1,4 @@
 node_modules/
 dist/
+/src/assets/vendor/
 /src/assets/vendor/*
