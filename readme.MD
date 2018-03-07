@@ -1,5 +1,9 @@
 # GSW TEST FRONTEND
 
+### Informações
+
+Servidor está rodando na porta 8085
+
 ### Tecnologias
 
 Todas tecnologias que utilizada são open source:
